@@ -4,12 +4,12 @@ Tags
 Tags are small icons or short texts in upper right corner of an item
 used to mark important or special items.
 
-[[images/tags.png]]
+.. image:: images/tags.png
 
 Tags can be configured in "Items" configuration tab. On Windows, "Item
 Tags" plugin needs to be installed.
 
-[[images/tags-config.png]]
+.. image:: images/tags-config.png
 
 Configuration consists solely of table where each row contains matching
 and styling rules for tags.
@@ -46,7 +46,7 @@ Tagging items can be accessed from context menu if appropriate commands
 are added in Command dialog (generated commands are available in the
 list under "Add" button).
 
-[[images/tags-add-command.png]]
+.. image:: images/tags-add-command.png
 
 Alternatively, tags are added to an item by setting
 "application/x-copyq-tags" format. It can contain multiple tags

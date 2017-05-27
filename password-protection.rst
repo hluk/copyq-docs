@@ -9,7 +9,7 @@ Installation
 
 To enable this feature you need to have "Encryption" item plugin.
 
-[[images/encryption-install.png]]
+.. image:: images/encryption-install.png
 
 The plugin configuration (under "Items" configuration tab in
 Configruation dialog) may prompt you to install
@@ -30,18 +30,18 @@ and public key files.
 
 Click on the "Generate Ney Keys..." button and wait.
 
-[[images/encryption-generate-keys.png]]
+.. image:: images/encryption-generate-keys.png
 
 If didn't set a password in previous step click "Change Password..."
 button and set it.
 
-[[images/encryption-password.png]]
+.. image:: images/encryption-password.png
 
 Last step in configuration is to set tabs to encrypt. You can skip this
 step if you only need to encrypt single item in each tab (see next
 section).
 
-[[images/encryption-tabs.png]]
+.. image:: images/encryption-tabs.png
 
 Click "OK" button to confirm Configuration dialog.
 
@@ -54,7 +54,7 @@ tab).
 The tab name should be same as one of the tabs entered in plugin
 configuration in previous step.
 
-[[images/encryption-tab.png]]
+.. image:: images/encryption-tab.png
 
 You'll be prompt to enter password in future (you only need to enter it
 once in a while).
@@ -62,7 +62,7 @@ once in a while).
 If you enter wrong password or cancel the password prompt you can later
 click on "Reload" button in tab to enter password again.
 
-[[images/encryption-reload.png]]
+.. image:: images/encryption-reload.png
 
 Protect Single Items
 --------------------

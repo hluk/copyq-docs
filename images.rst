@@ -18,7 +18,7 @@ Editor
 
 Editors for bitmap and SVG images can be set in the configuration.
 
-[[images/image-editor.png]]
+.. image:: images/image-editor.png
 
 Editing an image item (default shortcut is Ctrl+E) should open the image
 editor.
