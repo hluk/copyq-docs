@@ -33,10 +33,3 @@ CopyQ is advanced clipboard manager with editing and scripting features.
     running-tests
     customize-and-build-the-windows-installer
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
