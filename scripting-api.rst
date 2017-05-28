@@ -1038,7 +1038,9 @@ Here is list of some common and builtin (start with
 These MIME types values are assigned to global variables prefixed with
 ``mime``.
 
-Note: Content for following types is UTF-8 encoded.
+.. note::
+
+   Content for following types is UTF-8 encoded.
 
 mimeText (text/plain)
 '''''''''''''''''''''

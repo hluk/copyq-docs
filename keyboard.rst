@@ -10,7 +10,9 @@ any functionality with keyboard without using mouse.
 Default Shortcuts
 -----------------
 
-**Note:** On OS X, use ⌘ key instead of Ctrl for the shortcuts.
+.. note::
+
+   On OS X, use ⌘ key instead of Ctrl for the shortcuts.
 
 -  PgDown/PgUp, Home/End, Up/Down - item list navigation
 -  Left, Right, Ctrl+Tab, Ctrl+Shift+Tab - tab navigation

@@ -112,8 +112,9 @@ You can find configuration and saved items in:
 Run ``copyq info config`` to get absolute path to the configuration file
 (parent directory contains saved items).
 
-**NOTE:** Main configuration for installed version of the app on Windows
-is stored in registry.
+.. note::
+
+   Main configuration for installed version of the app on Windows is stored in registry.
 
 Why are items and configuration not saved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,9 +176,11 @@ Add and modify automatic command to ignore text copied from the window:
    window to ignore (e.g. ``KeePass``),
 6. click "OK" button to save the changes.
 
-**Note:** This new command should be at top of the command list because
-automatic commands are executed in order they appear in the list and we
-don't want to process sensitive data in any way.
+.. note::
+
+    This new command should be at top of the command list because
+    automatic commands are executed in order they appear in the list and we
+    don't want to process sensitive data in any way.
 
 How to paste double-clicked item from application window?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
