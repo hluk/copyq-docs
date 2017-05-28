@@ -84,8 +84,8 @@ Group: Type of Action
 This group sets the main type of the command. Usually only one
 sub-option is set.
 
-Automatic
-"""""""""
+a. Automatic
+""""""""""""
 
 If enabled, the command is triggered whenever clipboard changes.
 
@@ -96,8 +96,8 @@ has "Remove Item" option set or calls ``copyq ignore``.
 The command is **applied on current clipboard data** - i.e. options
 below access text or other data in clipboard.
 
-In Menu
-"""""""
+b. In Menu
+""""""""""
 
 If enabled, the command can be run from main window either with
 application shortcut, from context menu or "Item" menu. The command can
@@ -109,8 +109,8 @@ These shortcuts work only when CopyQ window has focus.
 If the command is run from **tray menu**, it is **applied on clipboard
 data**, otherwise it's **applied on data in selected items**.
 
-Global Shortcut
-"""""""""""""""
+c. Global Shortcut
+""""""""""""""""""
 
 If enabled, the command is triggered whenever assigned shortcut is
 pressed. These shortcuts work even when CopyQ window doesn't have focus.
@@ -123,8 +123,8 @@ Group: Match Items
 This group is visible only for "Automatic" or "In Menu" commands.
 Sub-options specify when the command can be used.
 
-Content
-"""""""
+1. Content
+""""""""""
 
 `Regular expression <https://doc.qt.io/qt-4.8/qregexp.html#introduction>`__
 to match text of selected items (for "In Menu" command) or clipboard
@@ -133,8 +133,8 @@ to match text of selected items (for "In Menu" command) or clipboard
 For example, ``^https?://`` will match simple web addresses (text
 starting with ``http://`` or ``https://``).
 
-Window
-""""""
+2. Window
+"""""""""
 
 `Regular expression <https://doc.qt.io/qt-4.8/qregexp.html#introduction>`__
 to match window title of active window (only for "Automatic" command).
@@ -142,8 +142,8 @@ to match window title of active window (only for "Automatic" command).
 For example, ``- Chromium$`` or ``Mozilla Firefox$`` to match some web
 browser window titles (``$`` in the expression means end of the title).
 
-Filter
-""""""
+3. Filter
+"""""""""
 
 A command for validating text of selected items (for "In Menu" command)
 or clipboard (for "Automatic" command).
@@ -154,8 +154,8 @@ context menu and automatically triggered on clipboard change.
 Example, ``copyq: if (tab().indexOf("Web") == -1) fail()`` triggers the
 command only if tab "Web" is available.
 
-Format
-""""""
+4. Format
+"""""""""
 
 Match format of selected items or clipboard.
 
@@ -203,13 +203,13 @@ Group: Action
 
 This group is visible only for "Automatic" or "In Menu" commands.
 
-Copy to tab
-"""""""""""
+1. Copy to tab
+""""""""""""""
 
 Creates new item in given tab.
 
-Remove Item
-"""""""""""
+2. Remove Item
+""""""""""""""
 
 Removes selected items. If enabled for "Automatic" command, the
 clipboard will be ignored and no other automatic commands will be
@@ -220,8 +220,8 @@ Group: Menu Action
 
 This group is visible only for "In Menu" commands.
 
-Hide main window after activation
-"""""""""""""""""""""""""""""""""
+1. Hide main window after activation
+""""""""""""""""""""""""""""""""""""
 
 If enabled, main window will be hidden after the command is executed.
 
@@ -230,30 +230,30 @@ Group: Command options
 
 This group is visible only for "Automatic" or "In Menu" commands.
 
-Wait
-""""
+1. Wait
+"""""""
 
 Show action dialog before applying options below.
 
-Transform
-"""""""""
+2. Transform
+""""""""""""
 
 Modify selected items - i.e. remove them and replace with **standard
 output** of the command.
 
-Output
-""""""
+3. Output
+"""""""""
 
 Format of **standard output** to save as new item.
 
-Separator
-"""""""""
+4. Separator
+""""""""""""
 
 Separator for splitting output to multiple items (``\n`` to split
 lines).
 
-Output tab
-""""""""""
+5. Output tab
+"""""""""""""
 
 Tab for saving the output of command.
 
