@@ -10,7 +10,7 @@ any functionality with keyboard without using mouse.
 Default Shortcuts
 -----------------
 
-Note: On OS X, use ⌘ key instead of Ctrl for the shortcuts.
+**Note:** On OS X, use ⌘ key instead of Ctrl for the shortcuts.
 
 -  PgDown/PgUp, Home/End, Up/Down - item list navigation
 -  Left, Right, Ctrl+Tab, Ctrl+Shift+Tab - tab navigation
@@ -39,11 +39,11 @@ Change Shortcuts
 
 To change the shortcuts:
 
-- open File - Preferences,
-- select Shortcuts tab,
+- open "File - Preferences",
+- select "Shortcuts" tab,
 - click the button next to action you need to change,
-- press desired shortcut,
-- submit dialog.
+- press a shortcut on keyboard,
+- click OK to save the dialog.
 
 Create new Shortcut
 -------------------
@@ -52,7 +52,7 @@ If and action with shortcut is missing in the Shortcuts configuration
 tab, you can use predefined ones:
 
 - open "File - Commands/Global Shortcuts...",
-- click Add button,
+- click "Add" button,
 - select command (e.g. "Show/hide main window"),
-- change shortcut,
+- press a shortcut on keyboard,
 - click OK to save the dialog.
