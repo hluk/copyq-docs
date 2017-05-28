@@ -4,12 +4,11 @@ FAQ - Frequently Asked Questions
 How to preserve the order of copied items on copy or pasting multiple items?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. reverse order of selected items with ``Ctrl+Shift+R`` and copy them
+a. Reverse order of selected items with ``Ctrl+Shift+R`` and copy them
    or
-2. select items in reverse order and copy
+b. select items in reverse order and copy.
 
-See
-`#165 <https://github.com/hluk/CopyQ/issues/165#issuecomment-34745058>`__
+See `#165 <https://github.com/hluk/CopyQ/issues/165#issuecomment-34745058>`__.
 
 How does pasting single/multiple items internally work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,61 +22,55 @@ If you select more items and press ``Return``, just the concatenated
 text of selected items is put into clipboard. Thought it could do more
 in future, like join HTML, images or other formats.
 
-See
-`#165 <https://github.com/hluk/CopyQ/issues/165#issuecomment-34957089>`__
+See `#165 <https://github.com/hluk/CopyQ/issues/165#issuecomment-34957089>`__.
 
 How to open the menu or context menu with only the keyboard?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. use ``Alt+I`` to open the item menu
-2. use the ``Menu`` key on your keyboard to open the context menu of an
-   item
+a. Use ``Alt+I`` to open the item menu or
+b. use the ``Menu`` key on your keyboard to open the context menu of an item.
 
 Is it possible to hide menu bar to have even cleaner main window?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Menu bar can be hidden by modifying style sheet of current theme. 1.
-Open Preferences dialog (Ctrl+P), 2. go to Appearance, 3. enable
-checkbox "Set colors for tabs, tool bar and menus", 4. click "Edit
-Theme" button, 5. find ``menu_bar_css`` option and add ``height: 0`` so
-it will be something like:
+Menu bar can be hidden by modifying style sheet of current theme.
 
-::
+1. Open Preferences dialog (Ctrl+P),
+2. go to Appearance,
+3. enable checkbox "Set colors for tabs, tool bar and menus",
+4. click "Edit Theme" button,
+5. find ``menu_bar_css`` option and add ``height: 0``:
+
+.. code-block:: ini
 
     menu_bar_css="
         ;height: 0
         ;background: ${bg}
         ;color: ${fg}"
 
-How to enable logging [STRIKEOUT:under Windows]?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to enable logging
+~~~~~~~~~~~~~~~~~~~~~
 
--  From CopyQ 2.1.0 there are two new environment variables
-   ``COPYQ_LOG_LEVEL`` and ``COPYQ_LOG_FILE`` you can set. See
-   `#195 <https://github.com/hluk/CopyQ/issues/195#issuecomment-38729873>`__
--  Before CopyQ 2.1.0: [STRIKEOUT:If want to see console logs you have
-   to redirect stdout and stderr with appending ``1> logfile 2>&1`` e.g.
-   ``copyq.exe 1> server.log 2>&1``]
+There are two new environment variables ``COPYQ_LOG_LEVEL`` and ``COPYQ_LOG_FILE`` you can set.
+See `#195 <https://github.com/hluk/CopyQ/issues/195#issuecomment-38729873>`__.
 
 How to back up commands?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
--  From CopyQ 2.1.0 there are two buttons under the ``Commands`` tab in
-   the preferences. ``Save Selected Commands...`` and ``Load Commands``.
-   Additionally you can copy and paste commands from the ``Commands``
-   tab in the preferences.
+There are two buttons under the ``Commands`` tab in the preferences ``Save Selected Commands...`` and ``Load Commands``.
+Additionally you can copy and paste commands from the ``Commands`` tab in the preferences.
 
 See
 `#125 <https://github.com/hluk/CopyQ/issues/125#issuecomment-33514437>`__
 and
-`#157 <https://github.com/hluk/CopyQ/issues/157#issuecomment-39028552>`__
+`#157 <https://github.com/hluk/CopyQ/issues/157#issuecomment-39028552>`__.
 
 Where are the notifications?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The default values for ``Interval in seconds to display notifications``
-and ``Number of lines for clipboard notification`` are ``0``. After
-increasing these values the notifications will be shown.
+and ``Number of lines for clipboard notification`` are ``0``.
+After increasing these values the notifications will be shown.
 
 How to reuse file paths copied from a file manager?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,10 +104,11 @@ How to paste as plain text?
 Where to find saved items and configuration?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can find configuration and saved items in: - Windows folder
-``%APPDATA%\copyq`` for installed version of the app or ``config``
-folder in unzipped portable version, - Linux directory
-``~/.config/copyq``.
+You can find configuration and saved items in:
+
+- Windows folder ``%APPDATA%\copyq`` for installed version of the app or ``config``
+  folder in unzipped portable version,
+- Linux directory ``~/.config/copyq``.
 
 Run ``copyq info config`` to get absolute path to the configuration file
 (parent directory contains saved items).

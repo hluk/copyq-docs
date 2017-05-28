@@ -25,9 +25,12 @@ parts of web pages and images if you installed CopyQ with image and web
 support.
 
 To assign **system shortcut to quickly open and close application
-window**: - open Command dialog from "File" menu "Command/Global
-Shortcuts...", - click "Add" button, - select "Show/hide main window"
-from list and click OK, - change "Global Shortcut" option.
+window**:
+
+- open Command dialog from "File" menu "Command/Global Shortcuts...",
+- click "Add" button,
+- select "Show/hide main window" from list and click OK,
+- change "Global Shortcut" option.
 
 Basic Item Manipulation
 -----------------------
@@ -103,9 +106,12 @@ This will print:
 Advanced Usage
 --------------
 
-Among other things that are possible with CopyQ are: \* open video
-player if text copied in clipboard is URL with multimedia, \* store text
-copied from a code editor in "code" tab, \* store URLs in different tab,
-\* save screenshots (print-screen), \* load all files from directory to
-items (create image gallery), \* replace a text in all matching items,
-\* run item as a Python script.
+Among other things that are possible with CopyQ are:
+
+* open video player if text copied in clipboard is URL with multimedia,
+* store text copied from a code editor in "code" tab,
+* store URLs in different tab,
+* save screenshots (print-screen),
+* load all files from directory to items (create image gallery),
+* replace a text in all matching items,
+* run item as a Python script.

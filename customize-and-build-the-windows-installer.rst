@@ -21,9 +21,10 @@ which executes
 to generate portable app folder from build files and runs Inno Setup
 (the last line).
 
-So you basically don't have to build the app, you just need: - the
-unzipped portable version of the app, - clone of this repository and -
-`Inno Setup <http://www.jrsoftware.org/isinfo.php>`__.
+So you basically don't have to build the app, you just need:
+- the unzipped portable version of the app,
+- clone of this repository and
+- `Inno Setup <http://www.jrsoftware.org/isinfo.php>`__.
 
 Open
 `shared/copyq.iss <https://github.com/hluk/CopyQ/blob/master/shared/copyq.iss>`__

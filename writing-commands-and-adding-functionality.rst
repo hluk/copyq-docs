@@ -25,14 +25,18 @@ Command Dialog
 --------------
 
 You can create new commands in Command dialog. To open the dialog
-either: - press default shortcut F6 or - select menu item
-"Commands/Global Shortcuts..." in "File" menu.
+either:
 
-Command dialog contains: - list of custom commands on the left, -
-settings for currently selected command on the right, - command filter
-text field at the top, - buttons to modify the command list (add, remove
-and move commands) at the top, - buttons to save, load, copy and paste
-commands at the bottom.
+- press default shortcut F6 or
+- select menu item "Commands/Global Shortcuts..." in "File" menu.
+
+Command dialog contains:
+
+- list of custom commands on the left,
+- settings for currently selected command on the right,
+- command filter text field at the top,
+- buttons to modify the command list (add, remove and move commands) at the top,
+- buttons to save, load, copy and paste commands at the bottom.
 
 Create New Command
 ~~~~~~~~~~~~~~~~~~
@@ -164,10 +168,11 @@ Command
 
 The command to run.
 
-This can contain either: - simple command line (e.g. ``copyq popup %1``
-- expression ``%1`` means text of the selected item or clipboard), -
-input for command interpreter (prefixed with ``bash:``, ``powershell:``,
-``python:`` etc.) or - CopyQ script (prefixed with ``copyq:``).
+This can contain either:
+
+- simple command line (e.g. ``copyq popup %1`` - expression ``%1`` means text of the selected item or clipboard),
+- input for command interpreter (prefixed with ``bash:``, ``powershell:``, ``python:`` etc.) or
+- CopyQ script (prefixed with ``copyq:``).
 
 You can use ``COPYQ`` environment variable to get path of application
 binary.

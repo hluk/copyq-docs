@@ -37,14 +37,22 @@ window and ``copyq menu``.
 Change Shortcuts
 ----------------
 
-To change the shortcuts: - open File - Preferences, - select Shortcuts
-tab, - click the button next to action you need to change, - press
-desired shortcut, - submit dialog.
+To change the shortcuts:
+
+- open File - Preferences,
+- select Shortcuts tab,
+- click the button next to action you need to change,
+- press desired shortcut,
+- submit dialog.
 
 Create new Shortcut
 -------------------
 
 If and action with shortcut is missing in the Shortcuts configuration
-tab, you can use predefined ones: - open File - Commands/Global
-Shortcuts..., - click Add button, - select command (e.g. "Show/hide main
-window"), - change shortcut, - click OK to save the dialog.
+tab, you can use predefined ones:
+
+- open "File - Commands/Global Shortcuts...",
+- click Add button,
+- select command (e.g. "Show/hide main window"),
+- change shortcut,
+- click OK to save the dialog.

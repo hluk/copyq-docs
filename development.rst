@@ -32,14 +32,15 @@ Linux you can run the tests on virtual X11 server with ``xvfb-run``.
 
     xvfb-run sh -c 'openbox & sleep 1; copyq tests'
 
-Test invocation examples: - Run specific tests:
-``copyq tests commandHelp commandVersion`` - Run specific tests for a
-plugin: ``copyq tests 'PLUGINS:pinned' isPinned`` - Run tests only for
-specific plugins: ``copyq tests 'PLUGINS:pinned|tags'`` - List tests:
-``copyq tests -functions`` - List tests for a plugin:
-``copyq tests PLUGINS:tags -functions`` - Less verbose tests:
-``copyq tests -silent`` - Slower GUI tests:
-``COPYQ_TESTS_KEYS_WAIT=1000 COPYQ_TESTS_KEY_DELAY=50 copyq tests editItems``
+Test invocation examples:
+
+- Run specific tests: ``copyq tests commandHelp commandVersion``
+- Run specific tests for a plugin: ``copyq tests 'PLUGINS:pinned' isPinned``
+- Run tests only for specific plugins: ``copyq tests 'PLUGINS:pinned|tags'``
+- List tests: ``copyq tests -functions``
+- List tests for a plugin: ``copyq tests PLUGINS:tags -functions``
+- Less verbose tests: ``copyq tests -silent``
+- Slower GUI tests: ``COPYQ_TESTS_KEYS_WAIT=1000 COPYQ_TESTS_KEY_DELAY=50 copyq tests editItems``
 
 Applications, Frameworks and Libraries
 --------------------------------------
