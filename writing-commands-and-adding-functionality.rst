@@ -178,7 +178,7 @@ You can use ``COPYQ`` environment variable to get path of application
 binary.
 
 Current CopyQ session name is stored in ``COPYQ_SESSION_NAME``
-environment variable (see :ref:`advanced-usage-sessions`).
+environment variable (see :ref:`sessions`).
 
 Example (call CopyQ from Python):
 

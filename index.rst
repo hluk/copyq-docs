@@ -15,7 +15,6 @@ CopyQ is advanced clipboard manager with editing and scripting features.
     basic-usage
     tabs-and-items
     keyboard
-    advanced-usage
     images
     tags
     faq
@@ -24,11 +23,14 @@ CopyQ is advanced clipboard manager with editing and scripting features.
     :caption: Advanced Topics
     :maxdepth: 2
 
+    command-line
+    sessions
+    password-protection
     writing-commands-and-adding-functionality
     scripting
     command-examples
-    password-protection
     backup
+    writing-raw-data
     scripting-api
 
 .. toctree::

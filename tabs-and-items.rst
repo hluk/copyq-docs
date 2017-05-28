@@ -1,6 +1,8 @@
 Tabs and Items
 ==============
 
+.. _tabs:
+
 Tabs
 ----
 
