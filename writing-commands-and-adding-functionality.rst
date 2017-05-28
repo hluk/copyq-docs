@@ -122,8 +122,7 @@ Sub-options specify when the command can be used.
 Content
 """""""
 
-Regular
-expression\ `1 <https://doc.qt.io/qt-4.8/qregexp.html#introduction>`__\ 
+`Regular expression <https://doc.qt.io/qt-4.8/qregexp.html#introduction>`__
 to match text of selected items (for "In Menu" command) or clipboard
 (for "Automatic" command).
 
@@ -133,8 +132,7 @@ starting with ``http://`` or ``https://``).
 Window
 """"""
 
-Regular
-expression\ `1 <https://doc.qt.io/qt-4.8/qregexp.html#introduction>`__\ 
+`Regular expression <https://doc.qt.io/qt-4.8/qregexp.html#introduction>`__
 to match window title of active window (only for "Automatic" command).
 
 For example, ``- Chromium$`` or ``Mozilla Firefox$`` to match some web
