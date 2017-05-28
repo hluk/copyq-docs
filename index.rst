@@ -9,8 +9,8 @@ Welcome to CopyQ's documentation!
 CopyQ is advanced clipboard manager with editing and scripting features.
 
 .. toctree::
+    :caption: The Basics
     :maxdepth: 2
-    :caption: Contents:
 
     basic-usage
     tabs-and-items
@@ -18,14 +18,22 @@ CopyQ is advanced clipboard manager with editing and scripting features.
     advanced-usage
     images
     tags
+    faq
+
+.. toctree::
+    :caption: Advanced Topics
+    :maxdepth: 2
+
     writing-commands-and-adding-functionality
     scripting
     command-examples
     password-protection
     backup
-    faq
-
     scripting-api
+
+.. toctree::
+    :caption: Development
+    :maxdepth: 2
 
     development
     text-encoding
