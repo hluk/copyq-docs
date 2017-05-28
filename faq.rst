@@ -51,8 +51,7 @@ Menu bar can be hidden by modifying style sheet of current theme.
 How to enable logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-There are two new environment variables ``COPYQ_LOG_LEVEL`` and ``COPYQ_LOG_FILE`` you can set.
-See `#195 <https://github.com/hluk/CopyQ/issues/195#issuecomment-38729873>`__.
+Set environment variable ``COPYQ_LOG_LEVEL`` to ``DEBUG`` and ``COPYQ_LOG_FILE`` to a file path for the log.
 
 How to back up commands?
 ~~~~~~~~~~~~~~~~~~~~~~~~
