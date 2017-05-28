@@ -1,46 +1,7 @@
-Development
-===========
+Source Code Overview
+====================
 
-This page describes CopyQ source code and processes for developers.
-
-Making Changes
---------------
-
-Pull requests are welcome at `github project
-page <https://github.com/hluk/CopyQ>`__.
-
-Try to keep the code style consistent with the existing code.
-
-Tests
------
-
-You can run automated tests if the application is built either in debug
-mode, with CMake flag ``-DWITH_TESTS=ON`` or QMake flag
-``CONFIG+=tests`` (releases are usually build with tests).
-
-Run the tests with following command.
-
-.. code-block:: bash
-
-    copyq tests
-
-While running tests there must be **no keyboard and mouse interaction**.
-Preferably you can execute the tests in separate virtual environment. On
-Linux you can run the tests on virtual X11 server with ``xvfb-run``.
-
-.. code-block:: bash
-
-    xvfb-run sh -c 'openbox & sleep 1; copyq tests'
-
-Test invocation examples:
-
-- Run specific tests: ``copyq tests commandHelp commandVersion``
-- Run specific tests for a plugin: ``copyq tests 'PLUGINS:pinned' isPinned``
-- Run tests only for specific plugins: ``copyq tests 'PLUGINS:pinned|tags'``
-- List tests: ``copyq tests -functions``
-- List tests for a plugin: ``copyq tests PLUGINS:tags -functions``
-- Less verbose tests: ``copyq tests -silent``
-- Slower GUI tests: ``COPYQ_TESTS_KEYS_WAIT=1000 COPYQ_TESTS_KEY_DELAY=50 copyq tests editItems``
+This page describes application processes and source code.
 
 Applications, Frameworks and Libraries
 --------------------------------------
@@ -48,17 +9,6 @@ Applications, Frameworks and Libraries
 The application is written in C++11 and uses Qt framework.
 
 Source code can be build either with CMake (preferred) or QMake.
-
-.. code-block:: bash
-
-    mkdir build
-    cd build
-    cmake \
-        -DCMAKE_BUILD_TYPE=Debug \
-        -DCMAKE_INSTALL_PREFIX=/usr/local \
-        -DWITH_QT5=ON \
-        -DWITH_TESTS=ON \
-        ..
 
 Most icons in the application are taken from theme by default (which
 currently works only on Linux) with fallback to built-in icons provided
@@ -265,25 +215,3 @@ CI servers.
 
 -  `Coveralls <https://coveralls.io/github/hluk/CopyQ>`__
 -  Contains coverage report from tests run with Travis CI.
-
-Translations
-------------
-
-Translations can be done either via
-`Weblate <https://hosted.weblate.org/projects/copyq/>`__ (preferred) or
-by using Qt utilities.
-
-All GUI strings should be translatable. This is indicated in code with
-``tr("Some GUI text", "Hints for translators")``.
-
-Adding New Language
-~~~~~~~~~~~~~~~~~~~
-
-To add new language for the application follow these steps.
-
-1. Edit ``copyq.pro`` and add file name for new language
-   (``translations/copyq_<LANGUAGE>.ts``) to ``TRANSLATIONS`` variable.
-2. Create new language file with ``lupdate copyq.pro``.
-3. Add new language file to Git repository.
-4. Translate with Weblate service or locally with
-   ``linguist translations/copyq_<LANGUAGE>.ts``.

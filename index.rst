@@ -37,9 +37,11 @@ CopyQ is advanced clipboard manager with editing and scripting features.
     :caption: Development
     :maxdepth: 2
 
-    development
+    build-source-code
+    fixing-bugs
+    source-code-overview
+    translations
     text-encoding
     how-to-build-copyq-on-windows
-    running-tests
     customize-and-build-the-windows-installer
 
