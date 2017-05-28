@@ -72,959 +72,841 @@ Functions
 Argument list parts ``...`` and ``[...]`` are optional and can be
 omitted.
 
-String version()
-''''''''''''''''
+.. js:function:: String version()
 
-Returns version string.
+   Returns version string.
 
-String help()
-'''''''''''''
+.. js:function:: String help()
 
-Returns help string.
+   Returns help string.
 
-String help(searchString, ...)
-''''''''''''''''''''''''''''''
+.. js:function:: String help(searchString, ...)
 
-Returns help for matched commands.
+   Returns help for matched commands.
 
-show()
-''''''
+.. js:function:: show()
 
-Shows main window.
+   Shows main window.
 
-show(tabName)
-'''''''''''''
+.. js:function:: show(tabName)
 
-Shows tab.
+   Shows tab.
 
-showAt()
-''''''''
+.. js:function:: showAt()
 
-Shows main window under mouse cursor.
+   Shows main window under mouse cursor.
 
-showAt(x, y, [width, height])
-'''''''''''''''''''''''''''''
+.. js:function:: showAt(x, y, [width, height])
 
-Shows main window with given geometry.
+   Shows main window with given geometry.
 
-showAt(x, y, width, height, tabName)
-''''''''''''''''''''''''''''''''''''
+.. js:function:: showAt(x, y, width, height, tabName)
 
-Shows tab with given geometry.
+   Shows tab with given geometry.
 
-hide()
-''''''
+.. js:function:: hide()
 
-Hides main window.
+   Hides main window.
 
-bool toggle()
-'''''''''''''
+.. js:function:: bool toggle()
 
-Shows or hides main window.
+   Shows or hides main window.
 
-Returns true only if main window is being shown.
+   Returns true only if main window is being shown.
 
-menu()
-''''''
+.. js:function:: menu()
 
-Opens context menu.
+   Opens context menu.
 
-menu(tabName, [maxItemCount, [x, y]])
-'''''''''''''''''''''''''''''''''''''
+.. js:function:: menu(tabName, [maxItemCount, [x, y]])
 
-Shows context menu for given tab.
+   Shows context menu for given tab.
 
-This menu doesn't show clipboard and doesn't have any special actions.
+   This menu doesn't show clipboard and doesn't have any special actions.
 
-Second argument is optional maximum number of items. The default value
-same as for tray (i.e. value of ``config('tray_items')``).
+   Second argument is optional maximum number of items. The default value
+   same as for tray (i.e. value of ``config('tray_items')``).
 
-Optional arguments x, y are coordinates in pixels on screen where menu
-should show up. By default menu shows up under the mouse cursor.
+   Optional arguments x, y are coordinates in pixels on screen where menu
+   should show up. By default menu shows up under the mouse cursor.
 
-exit()
-''''''
+.. js:function:: exit()
 
-Exits server.
+   Exits server.
 
-disable(), enable()
-'''''''''''''''''''
+.. js:function:: disable(), enable()
 
-Disables or enables clipboard content storing.
+   Disables or enables clipboard content storing.
 
-bool monitoring()
-'''''''''''''''''
+.. js:function:: bool monitoring()
 
-Returns true only if clipboard storing is enabled.
+   Returns true only if clipboard storing is enabled.
 
-bool visible()
-''''''''''''''
+.. js:function:: bool visible()
 
-Returns true only if main window is visible.
+   Returns true only if main window is visible.
 
-bool focused()
-''''''''''''''
+.. js:function:: bool focused()
 
-Returns true only if main window has focus.
+   Returns true only if main window has focus.
 
-filter(filterText)
-''''''''''''''''''
+.. js:function:: filter(filterText)
 
-Sets text for filtering items in main window.
+   Sets text for filtering items in main window.
 
-ignore()
-''''''''
+.. js:function:: ignore()
 
-Ignores current clipboard content (used for automatic commands).
+   Ignores current clipboard content (used for automatic commands).
 
-This does all of the below.
+   This does all of the below.
 
--  Skips any next automatic commands.
--  Omits changing window title and tray tool tip.
--  Won't store content in clipboard tab.
+   -  Skips any next automatic commands.
+   -  Omits changing window title and tray tool tip.
+   -  Won't store content in clipboard tab.
 
-ByteArray clipboard([mimeType])
-'''''''''''''''''''''''''''''''
+.. js:function:: ByteArray clipboard([mimeType])
 
-Returns clipboard data for MIME type (default is text).
+   Returns clipboard data for MIME type (default is text).
 
-Pass argument ``"?"`` to list available MIME types.
+   Pass argument ``"?"`` to list available MIME types.
 
-ByteArray selection([mimeType])
-'''''''''''''''''''''''''''''''
+.. js:function:: ByteArray selection([mimeType])
 
-Same as ``clipboard()`` for Linux/X11 mouse selection.
+   Same as ``clipboard()`` for Linux/X11 mouse selection.
 
-bool hasClipboardFormat(mimeType)
-'''''''''''''''''''''''''''''''''
+.. js:function:: bool hasClipboardFormat(mimeType)
 
-Returns true only if clipboard contains MIME type.
+   Returns true only if clipboard contains MIME type.
 
-bool hasSelectionFormat(mimeType)
-'''''''''''''''''''''''''''''''''
+.. js:function:: bool hasSelectionFormat(mimeType)
 
-Same as ``hasClipboardFormat()`` for Linux/X11 mouse selection.
+   Same as ``hasClipboardFormat()`` for Linux/X11 mouse selection.
 
-bool copy(text)
-'''''''''''''''
+.. js:function:: bool copy(text)
 
-Sets clipboard plain text.
+   Sets clipboard plain text.
 
-Same as ``copy(mimeText, text)``.
+   Same as ``copy(mimeText, text)``.
 
-bool copy(mimeType, data, [mimeType, data]...)
-''''''''''''''''''''''''''''''''''''''''''''''
+.. js:function:: bool copy(mimeType, data, [mimeType, data]...)
 
-Sets clipboard data.
+   Sets clipboard data.
 
-This also sets ``mimeOwner`` format so automatic commands are not run on
-the new data and it's not store in clipboard tab.
+   This also sets ``mimeOwner`` format so automatic commands are not run on
+   the new data and it's not store in clipboard tab.
 
-Exception is thrown if clipboard fails to be set.
+   Exception is thrown if clipboard fails to be set.
 
-Example (set both text and rich text):
+   Example (set both text and rich text):
 
-.. code-block:: js
+   .. code-block:: js
 
-    copy(mimeText, 'Hello, World!',
-         mimeHtml, '<p>Hello, World!</p>')
+       copy(mimeText, 'Hello, World!',
+            mimeHtml, '<p>Hello, World!</p>')
 
-bool copy()
-'''''''''''
+.. js:function:: bool copy()
 
-Sends ``Ctrl+C`` to current window.
+   Sends ``Ctrl+C`` to current window.
 
-Exception is thrown if clipboard doesn't change (clipboard is reset
-before sending the shortcut).
+   Exception is thrown if clipboard doesn't change (clipboard is reset
+   before sending the shortcut).
 
-ByteArray copySelection(...)
-''''''''''''''''''''''''''''
+.. js:function:: ByteArray copySelection(...)
 
-Same as ``copy(...)`` for Linux/X11 mouse selection.
+   Same as ``copy(...)`` for Linux/X11 mouse selection.
 
-paste()
-'''''''
+.. js:function:: paste()
 
-Pastes current clipboard.
+   Pastes current clipboard.
 
-This is basically only sending ``Shift+Insert`` shortcut to current
-window.
+   This is basically only sending ``Shift+Insert`` shortcut to current
+   window.
 
-Correct functionality depends a lot on target application and window
-manager.
+   Correct functionality depends a lot on target application and window
+   manager.
 
-Array tab()
-'''''''''''
+.. js:function:: Array tab()
 
-Returns array of with tab names.
+   Returns array of with tab names.
 
-tab(tabName)
-''''''''''''
+.. js:function:: tab(tabName)
 
-Sets current tab for the script.
+   Sets current tab for the script.
 
-E.g. following script selects third item (index is 2) from tab "Notes".
+   E.g. following script selects third item (index is 2) from tab "Notes".
 
-.. code-block:: js
+   .. code-block:: js
 
-    tab('Notes')
-    select(2)
+       tab('Notes')
+       select(2)
 
-removeTab(tabName)
-''''''''''''''''''
+.. js:function:: removeTab(tabName)
 
-Removes tab.
+   Removes tab.
 
-renameTab(tabName, newTabName)
-''''''''''''''''''''''''''''''
+.. js:function:: renameTab(tabName, newTabName)
 
-Renames tab.
+   Renames tab.
 
-String tabIcon(tabName)
-'''''''''''''''''''''''
+.. js:function:: String tabIcon(tabName)
 
-Returns path to icon for tab.
+   Returns path to icon for tab.
 
-tabIcon(tabName, iconPath)
-''''''''''''''''''''''''''
+.. js:function:: tabIcon(tabName, iconPath)
 
-Sets icon for tab.
+   Sets icon for tab.
 
-count(), length(), size()
-'''''''''''''''''''''''''
+.. js:function:: count(), length(), size()
 
-Returns amount of items in current tab.
+   Returns amount of items in current tab.
 
-select(row)
-'''''''''''
+.. js:function:: select(row)
 
-Copies item in the row to clipboard.
+   Copies item in the row to clipboard.
 
-Additionally, moves selected item to top depending on settings.
+   Additionally, moves selected item to top depending on settings.
 
-next()
-''''''
+.. js:function:: next()
 
-Copies next item from current tab to clipboard.
+   Copies next item from current tab to clipboard.
 
-previous()
-''''''''''
+.. js:function:: previous()
 
-Copies previous item from current tab to clipboard.
+   Copies previous item from current tab to clipboard.
 
-add(text, ...)
-''''''''''''''
+.. js:function:: add(text, ...)
 
-Adds new text items to current tab.
+   Adds new text items to current tab.
 
-Throws an exception if space for the items cannot be allocated.
+   Throws an exception if space for the items cannot be allocated.
 
-insert(row, text)
-'''''''''''''''''
+.. js:function:: insert(row, text)
 
-Inserts new text items to current tab.
+   Inserts new text items to current tab.
 
-remove(row, ...)
-''''''''''''''''
+.. js:function:: remove(row, ...)
 
-Removes items in current tab.
+   Removes items in current tab.
 
-Throws an exception if some items cannot be removed.
+   Throws an exception if some items cannot be removed.
 
-edit([row\|text] ...)
-'''''''''''''''''''''
+.. js:function:: edit([row\|text] ...)
 
-Edits items in current tab.
+   Edits items in current tab.
 
-Opens external editor if set, otherwise opens internal editor.
+   Opens external editor if set, otherwise opens internal editor.
 
-ByteArray read([mimeType]);
-'''''''''''''''''''''''''''
+.. js:function:: ByteArray read([mimeType]);
 
-Same as ``clipboard()``.
+   Same as ``clipboard()``.
 
-ByteArray read(mimeType, row, ...);
-'''''''''''''''''''''''''''''''''''
+.. js:function:: ByteArray read(mimeType, row, ...);
 
-Returns concatenated data from items.
+   Returns concatenated data from items.
 
-Pass argument ``"?"`` to list available MIME types.
+   Pass argument ``"?"`` to list available MIME types.
 
-write(row, mimeType, data, [mimeType, data]...)
-'''''''''''''''''''''''''''''''''''''''''''''''
+.. js:function:: write(row, mimeType, data, [mimeType, data]...)
 
-Inserts new item to current tab.
+   Inserts new item to current tab.
 
-Throws an exception if space for the items cannot be allocated.
+   Throws an exception if space for the items cannot be allocated.
 
-change(row, mimeType, data, [mimeType, data]...)
-''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:function:: change(row, mimeType, data, [mimeType, data]...)
 
-Changes data in item in current tab.
+   Changes data in item in current tab.
 
-If data is ``undefined`` the format is removed from item.
+   If data is ``undefined`` the format is removed from item.
 
-String separator()
-''''''''''''''''''
+.. js:function:: String separator()
 
-Returns item separator (used when concatenating item data).
+   Returns item separator (used when concatenating item data).
 
-separator(separator)
-''''''''''''''''''''
+.. js:function:: separator(separator)
 
-Sets item separator for concatenating item data.
+   Sets item separator for concatenating item data.
 
-action()
-''''''''
+.. js:function:: action()
 
-Opens action dialog.
+   Opens action dialog.
 
-action(row, ..., command, outputItemSeparator)
-''''''''''''''''''''''''''''''''''''''''''''''
+.. js:function:: action(row, ..., command, outputItemSeparator)
 
-Runs command for items in current tab.
+   Runs command for items in current tab.
 
-popup(title, message, [time=8000])
-''''''''''''''''''''''''''''''''''
+.. js:function:: popup(title, message, [time=8000])
 
-Shows popup message for given time in milliseconds.
+   Shows popup message for given time in milliseconds.
 
-If ``time`` argument is set to -1, the popup is hidden only after mouse
-click.
+   If ``time`` argument is set to -1, the popup is hidden only after mouse
+   click.
 
-notification(...)
-'''''''''''''''''
+.. js:function:: notification(...)
 
-Shows popup message with icon and buttons.
+   Shows popup message with icon and buttons.
 
-Each button can have script and data.
+   Each button can have script and data.
 
-If button is clicked the notification is hidden and script is executed
-with the data passed as stdin.
+   If button is clicked the notification is hidden and script is executed
+   with the data passed as stdin.
 
-The function returns immediatelly (doesn't wait on user input).
+   The function returns immediatelly (doesn't wait on user input).
 
-Special arguments:
+   Special arguments:
 
--  '.title' - notification title
--  '.message' - notification message (can contain basic HTML)
--  '.icon' - notification icon (path to image or font icon)
--  '.id' - notification ID - this replaces notification with same ID
--  '.time' - duration of notification in milliseconds (default is -1,
-   i.e. waits for mouse click)
--  '.button' - adds button (three arguments: name, script and data)
+   -  '.title' - notification title
+   -  '.message' - notification message (can contain basic HTML)
+   -  '.icon' - notification icon (path to image or font icon)
+   -  '.id' - notification ID - this replaces notification with same ID
+   -  '.time' - duration of notification in milliseconds (default is -1,
+      i.e. waits for mouse click)
+   -  '.button' - adds button (three arguments: name, script and data)
 
-Example:
+   Example:
 
-.. code-block:: js
+   .. code-block:: js
 
-    notification(
-          '.title', 'Example',
-          '.message', 'Notification with button',
-          '.button', 'Cancel', '', '',
-          '.button', 'OK', 'copyq:popup(input())', 'OK Clicked'
-          )
+       notification(
+             '.title', 'Example',
+             '.message', 'Notification with button',
+             '.button', 'Cancel', '', '',
+             '.button', 'OK', 'copyq:popup(input())', 'OK Clicked'
+             )
 
-exportTab(fileName)
-'''''''''''''''''''
+.. js:function:: exportTab(fileName)
 
-Exports current tab into file.
+   Exports current tab into file.
 
-importTab(fileName)
-'''''''''''''''''''
+.. js:function:: importTab(fileName)
 
-Imports items from file to a new tab.
+   Imports items from file to a new tab.
 
-String config()
-'''''''''''''''
+.. js:function:: String config()
 
-Returns help with list of available options.
+   Returns help with list of available options.
 
-String config(optionName)
-'''''''''''''''''''''''''
+.. js:function:: String config(optionName)
 
-Returns value of given option.
+   Returns value of given option.
 
-Throws an exception if the option is invalid.
+   Throws an exception if the option is invalid.
 
-String config(optionName, value)
-''''''''''''''''''''''''''''''''
+.. js:function:: String config(optionName, value)
 
-Sets option and returns new value.
+   Sets option and returns new value.
 
-Throws an exception if the option is invalid.
+   Throws an exception if the option is invalid.
 
-String config(optionName, value, ...)
-'''''''''''''''''''''''''''''''''''''
+.. js:function:: String config(optionName, value, ...)
 
-Sets multiple options and return list with values in format
-``optionName=newValue``.
+   Sets multiple options and return list with values in format
+   ``optionName=newValue``.
 
-Throws an exception if there is an invalid option in which case it won't
-set any options.
+   Throws an exception if there is an invalid option in which case it won't
+   set any options.
 
-String info([pathName])
-'''''''''''''''''''''''
+.. js:function:: String info([pathName])
 
-Returns paths and flags used by the application.
+   Returns paths and flags used by the application.
 
-E.g. following command prints path to configuration file.
+   E.g. following command prints path to configuration file.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-    copyq info config
+       copyq info config
 
-Value eval(script)
-''''''''''''''''''
+.. js:function:: Value eval(script)
 
-Evaluates script and returns result.
+   Evaluates script and returns result.
 
-Value source(fileName)
-''''''''''''''''''''''
+.. js:function:: Value source(fileName)
 
-Evaluates script file and returns result of last expression in the
-script.
+   Evaluates script file and returns result of last expression in the
+   script.
 
-This is useful to move some common code out of commands.
+   This is useful to move some common code out of commands.
 
-.. code-block:: js
+   .. code-block:: js
 
-    // File: c:/copyq/replace_clipboard_text.js
-    replaceClipboardText = function(replaceWhat, replaceWith)
-    {
-        var text = str(clipboard())
-        var newText = text.replace(replaceWhat, replaceWith)
-        if (text != newText)
-            copy(newText)
-    }
+       // File: c:/copyq/replace_clipboard_text.js
+       replaceClipboardText = function(replaceWhat, replaceWith)
+       {
+           var text = str(clipboard())
+           var newText = text.replace(replaceWhat, replaceWith)
+           if (text != newText)
+               copy(newText)
+       }
 
-.. code-block:: js
+   .. code-block:: js
 
-    source('c:/copyq/replace_clipboard_text.js')
-    replaceClipboardText('secret', '*****')
+       source('c:/copyq/replace_clipboard_text.js')
+       replaceClipboardText('secret', '*****')
 
-String currentPath([path])
-''''''''''''''''''''''''''
+.. js:function:: String currentPath([path])
 
-Get or set current path.
+   Get or set current path.
 
-String str(value)
-'''''''''''''''''
+.. js:function:: String str(value)
 
-Converts a value to string.
+   Converts a value to string.
 
-If ByteArray object is the argument, it assumes UTF8 encoding. To use
-different encoding, use ``toUnicode()``.
+   If ByteArray object is the argument, it assumes UTF8 encoding. To use
+   different encoding, use ``toUnicode()``.
 
-ByteArray input()
-'''''''''''''''''
+.. js:function:: ByteArray input()
 
-Returns standard input passed to the script.
+   Returns standard input passed to the script.
 
-String toUnicode(ByteArray, encodingName)
-'''''''''''''''''''''''''''''''''''''''''
+.. js:function:: String toUnicode(ByteArray, encodingName)
 
-Returns string for bytes with given encoding.
+   Returns string for bytes with given encoding.
 
-String toUnicode(ByteArray)
-'''''''''''''''''''''''''''
+.. js:function:: String toUnicode(ByteArray)
 
-Returns string for bytes with encoding detected by checking Byte Order
-Mark (BOM).
+   Returns string for bytes with encoding detected by checking Byte Order
+   Mark (BOM).
 
-ByteArray fromUnicode(String, encodingName)
-'''''''''''''''''''''''''''''''''''''''''''
+.. js:function:: ByteArray fromUnicode(String, encodingName)
 
-Returns encoded text.
+   Returns encoded text.
 
-ByteArray data(mimeType)
-''''''''''''''''''''''''
+.. js:function:: ByteArray data(mimeType)
 
-Returns data for automatic commands or selected items.
+   Returns data for automatic commands or selected items.
 
-If run from menu or using non-global shortcut the data are taken from
-selected items.
+   If run from menu or using non-global shortcut the data are taken from
+   selected items.
 
-If run for automatic command the data are clipboard content.
+   If run for automatic command the data are clipboard content.
 
-ByteArray setData(mimeType, data)
-'''''''''''''''''''''''''''''''''
+.. js:function:: ByteArray setData(mimeType, data)
 
-Modifies data for ``data()`` and new clipboard item.
+   Modifies data for ``data()`` and new clipboard item.
 
-Next automatic command will get updated data.
+   Next automatic command will get updated data.
 
-This is also the data used to create new item from clipboard.
+   This is also the data used to create new item from clipboard.
 
-E.g. following automatic command will add creation time data and tag to
-new items.
+   E.g. following automatic command will add creation time data and tag to
+   new items.
 
-::
+   ::
 
-    copyq:
-    var timeFormat = 'yyyy-MM-dd hh:mm:ss'
-    setData('application/x-copyq-user-copy-time', dateString(timeFormat))
-    setData(mimeTags, 'copied: ' + time)
+       copyq:
+       var timeFormat = 'yyyy-MM-dd hh:mm:ss'
+       setData('application/x-copyq-user-copy-time', dateString(timeFormat))
+       setData(mimeTags, 'copied: ' + time)
 
-E.g. following menu command will add tag to selected items.
+   E.g. following menu command will add tag to selected items.
 
-::
+   ::
 
-    copyq:
-    setData('application/x-copyq-tags', 'Important')
+       copyq:
+       setData('application/x-copyq-tags', 'Important')
 
-ByteArray removeData(mimeType)
-''''''''''''''''''''''''''''''
+.. js:function:: ByteArray removeData(mimeType)
 
-Removes data for ``data()`` and new clipboard item.
+   Removes data for ``data()`` and new clipboard item.
 
-Array dataFormats()
-'''''''''''''''''''
+.. js:function:: Array dataFormats()
 
-Returns formats available for ``data()``.
+   Returns formats available for ``data()``.
 
-print(value)
-''''''''''''
+.. js:function:: print(value)
 
-Prints value to standard output.
+   Prints value to standard output.
 
-abort()
-'''''''
+.. js:function:: abort()
 
-Aborts script evaluation.
+   Aborts script evaluation.
 
-fail()
-''''''
+.. js:function:: fail()
 
-Aborts script evaluation with nonzero exit code.
+   Aborts script evaluation with nonzero exit code.
 
-setCurrentTab(tabName)
-''''''''''''''''''''''
+.. js:function:: setCurrentTab(tabName)
 
-Focus tab without showing main window.
+   Focus tab without showing main window.
 
-selectItems(row, ...)
-'''''''''''''''''''''
+.. js:function:: selectItems(row, ...)
 
-Selects items in current tab.
+   Selects items in current tab.
 
-String selectedTab()
-''''''''''''''''''''
+.. js:function:: String selectedTab()
 
-Returns tab that was selected when script was executed.
+   Returns tab that was selected when script was executed.
 
-See `Selected Items <#selected-items>`__.
+   See `Selected Items <#selected-items>`__.
 
-[row, ...] selectedItems()
-''''''''''''''''''''''''''
+.. js:function:: [row, ...] selectedItems()
 
-Returns selected rows in current tab.
+   Returns selected rows in current tab.
 
-See `Selected Items <#selected-items>`__.
+   See `Selected Items <#selected-items>`__.
 
-Item selectedItemData(index)
-''''''''''''''''''''''''''''
+.. js:function:: Item selectedItemData(index)
 
-Returns data for given selected item.
+   Returns data for given selected item.
 
-The data can empty if the item was removed during execution of the
-script.
+   The data can empty if the item was removed during execution of the
+   script.
 
-See `Selected Items <#selected-items>`__.
+   See `Selected Items <#selected-items>`__.
 
-bool setSelectedItemData(index, Item)
-'''''''''''''''''''''''''''''''''''''
+.. js:function:: bool setSelectedItemData(index, Item)
 
-Set data for given selected item.
+   Set data for given selected item.
 
-Returns false only if the data cannot be set, usually if item was
-removed.
+   Returns false only if the data cannot be set, usually if item was
+   removed.
 
-See `Selected Items <#selected-items>`__.
+   See `Selected Items <#selected-items>`__.
 
-Item[] selectedItemsData()
-''''''''''''''''''''''''''
+.. js:function:: Item[] selectedItemsData()
 
-Returns data for all selected item.
+   Returns data for all selected item.
 
-Some data can empty if the item was removed during execution of the
-script.
+   Some data can empty if the item was removed during execution of the
+   script.
 
-See `Selected Items <#selected-items>`__.
+   See `Selected Items <#selected-items>`__.
 
-void setSelectedItemsData(Item[])
-'''''''''''''''''''''''''''''''''
+.. js:function:: void setSelectedItemsData(Item[])
 
-Set data to all selected items.
+   Set data to all selected items.
 
-Some data may not be set if the item was removed during execution of the
-script.
+   Some data may not be set if the item was removed during execution of the
+   script.
 
-See `Selected Items <#selected-items>`__.
+   See `Selected Items <#selected-items>`__.
 
-int currentItem(), int index()
-''''''''''''''''''''''''''''''
+.. js:function:: int currentItem(), int index()
 
-Returns current row in current tab.
+   Returns current row in current tab.
 
-See `Selected Items <#selected-items>`__.
+   See `Selected Items <#selected-items>`__.
 
-String escapeHtml(text)
-'''''''''''''''''''''''
+.. js:function:: String escapeHtml(text)
 
-Returns text with special HTML characters escaped.
+   Returns text with special HTML characters escaped.
 
-Item unpack(data)
-'''''''''''''''''
+.. js:function:: Item unpack(data)
 
-Returns deserialized object from serialized items.
+   Returns deserialized object from serialized items.
 
-ByteArray pack(item)
-''''''''''''''''''''
+.. js:function:: ByteArray pack(item)
 
-Returns serialized item.
+   Returns serialized item.
 
-Item getItem(row)
-'''''''''''''''''
+.. js:function:: Item getItem(row)
 
-Returns an item in current tab.
+   Returns an item in current tab.
 
-setItem(row, item)
-''''''''''''''''''
+.. js:function:: setItem(row, item)
 
-Inserts item to current tab.
+   Inserts item to current tab.
 
-String toBase64(data)
-'''''''''''''''''''''
+.. js:function:: String toBase64(data)
 
-Returns base64-encoded data.
+   Returns base64-encoded data.
 
-ByteArray fromBase64(base64String)
-''''''''''''''''''''''''''''''''''
+.. js:function:: ByteArray fromBase64(base64String)
 
-Returns base64-decoded data.
+   Returns base64-decoded data.
 
-bool open(url, ...)
-'''''''''''''''''''
+.. js:function:: bool open(url, ...)
 
-Tries to open URLs in appropriate applications.
+   Tries to open URLs in appropriate applications.
 
-Returns true only if all URLs were successfully opened.
+   Returns true only if all URLs were successfully opened.
 
-FinishedCommand execute(argument, ..., null, stdinData, ...)
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:function:: FinishedCommand execute(argument, ..., null, stdinData, ...)
 
-Executes a command.
+   Executes a command.
 
-All arguments after ``null`` are passed to standard input of the
-command.
+   All arguments after ``null`` are passed to standard input of the
+   command.
 
-If arguments is function it will be called with array of lines read from
-stdout whenever available.
+   If arguments is function it will be called with array of lines read from
+   stdout whenever available.
 
-E.g. create item for each line on stdout:
+   E.g. create item for each line on stdout:
 
-.. code-block:: js
+   .. code-block:: js
 
-    execute('tail', '-f', 'some_file.log',
-            function(lines) { add.apply(this, lines) })
+       execute('tail', '-f', 'some_file.log',
+               function(lines) { add.apply(this, lines) })
 
-Returns object for the finished command or ``undefined`` on failure.
+   Returns object for the finished command or ``undefined`` on failure.
 
-String currentWindowTitle()
-'''''''''''''''''''''''''''
+.. js:function:: String currentWindowTitle()
 
-Returns window title of currently focused window.
+   Returns window title of currently focused window.
 
-Value dialog(...)
-'''''''''''''''''
+.. js:function:: Value dialog(...)
 
-Shows messages or asks user for input.
+   Shows messages or asks user for input.
 
-Arguments are names and associated values.
+   Arguments are names and associated values.
 
-Special arguments:
+   Special arguments:
 
--  '.title' - dialog title
--  '.icon' - dialog icon (see below for more info)
--  '.style' - Qt style sheet for dialog
--  '.height', '.width', '.x', '.y' - dialog geometry
--  '.label' - dialog message (can contain basic HTML)
+   -  '.title' - dialog title
+   -  '.icon' - dialog icon (see below for more info)
+   -  '.style' - Qt style sheet for dialog
+   -  '.height', '.width', '.x', '.y' - dialog geometry
+   -  '.label' - dialog message (can contain basic HTML)
 
-.. code-block:: js
+   .. code-block:: js
 
-    dialog(
-      '.title', 'Command Finished',
-      '.label', 'Command <b>successfully</b> finished.'
-      )
+       dialog(
+         '.title', 'Command Finished',
+         '.label', 'Command <b>successfully</b> finished.'
+         )
 
-Other arguments are used to get user input.
+   Other arguments are used to get user input.
 
-.. code-block:: js
+   .. code-block:: js
 
-    var amount = dialog('.title', 'Amount?', 'Enter Amount', 'n/a')
-    var filePath = dialog('.title', 'File?', 'Choose File', new File('/home'))
+       var amount = dialog('.title', 'Amount?', 'Enter Amount', 'n/a')
+       var filePath = dialog('.title', 'File?', 'Choose File', new File('/home'))
 
-If multiple inputs are required, object is returned.
+   If multiple inputs are required, object is returned.
 
-.. code-block:: js
+   .. code-block:: js
 
-    var result = dialog(
-      'Enter Amount', 'n/a',
-      'Choose File', new File(str(currentPath))
-      )
-    print('Amount: ' + result['Enter Amount'] + '\n')
-    print('File: ' + result['Choose File'] + '\n')
+       var result = dialog(
+         'Enter Amount', 'n/a',
+         'Choose File', new File(str(currentPath))
+         )
+       print('Amount: ' + result['Enter Amount'] + '\n')
+       print('File: ' + result['Choose File'] + '\n')
 
-Editable combo box can be created by passing array. Current value can be
-provided using ``.defaultChoice`` (by default it's the first item).
+   Editable combo box can be created by passing array. Current value can be
+   provided using ``.defaultChoice`` (by default it's the first item).
 
-.. code-block:: js
+   .. code-block:: js
 
-    var text = dialog('.defaultChoice', '', 'Select', ['a', 'b', 'c'])
+       var text = dialog('.defaultChoice', '', 'Select', ['a', 'b', 'c'])
 
-List can be created by prefixing name/label with ``.list:`` and passing
-array.
+   List can be created by prefixing name/label with ``.list:`` and passing
+   array.
 
-.. code-block:: js
+   .. code-block:: js
 
-    var items = ['a', 'b', 'c']
-    var selected_index = dialog('.list:Select', items)
-    if (selected_index)
-        print('Selected item: ' + items[selected_index])
+       var items = ['a', 'b', 'c']
+       var selected_index = dialog('.list:Select', items)
+       if (selected_index)
+           print('Selected item: ' + items[selected_index])
 
-Icon for custom dialog can be set from icon font, file path or theme.
-Icons from icon font can be copied from icon selection dialog in Command
-dialog or dialog for setting tab icon (in menu 'Tabs/Change Tab Icon').
+   Icon for custom dialog can be set from icon font, file path or theme.
+   Icons from icon font can be copied from icon selection dialog in Command
+   dialog or dialog for setting tab icon (in menu 'Tabs/Change Tab Icon').
 
-.. code-block:: js
+   .. code-block:: js
 
-    var search = dialog(
-      '.title', 'Search',
-      '.icon', 'search', // Set icon 'search' from theme.
-      'Search', ''
-      )
+       var search = dialog(
+         '.title', 'Search',
+         '.icon', 'search', // Set icon 'search' from theme.
+         'Search', ''
+         )
 
-Array settings()
-''''''''''''''''
+.. js:function:: Array settings()
 
-Returns array with names of all custom options.
+   Returns array with names of all custom options.
 
-Value settings(optionName)
-''''''''''''''''''''''''''
+.. js:function:: Value settings(optionName)
 
-Returns value for an option.
+   Returns value for an option.
 
-settings(optionName)
-''''''''''''''''''''
+.. js:function:: settings(optionName)
 
-Sets value for a new option or overrides existing option.
+   Sets value for a new option or overrides existing option.
 
-String dateString(format)
-'''''''''''''''''''''''''
+.. js:function:: String dateString(format)
 
-Returns text representation of current date and time.
+   Returns text representation of current date and time.
 
-See
-`QDateTime::toString() <http://doc.qt.io/qt-5/qdatetime.html#toString>`__
-for details on formatting date and time.
+   See
+   `QDateTime::toString() <http://doc.qt.io/qt-5/qdatetime.html#toString>`__
+   for details on formatting date and time.
 
-Example:
+   Example:
 
-.. code-block:: js
+   .. code-block:: js
 
-    var now = dateString('yyyy-MM-dd HH:mm:ss')
+       var now = dateString('yyyy-MM-dd HH:mm:ss')
 
-Command[] commands()
-''''''''''''''''''''
+.. js:function:: Command[] commands()
 
-Return list of all commands.
+   Return list of all commands.
 
-setCommands(Command[])
-''''''''''''''''''''''
+.. js:function:: setCommands(Command[])
 
-Clear previous commands and set new ones.
+   Clear previous commands and set new ones.
 
-To add new command:
+   To add new command:
 
-.. code-block:: js
+   .. code-block:: js
 
-    var cmds = commands()
-    cmds.unshift({
-            name: 'New Command',
-            automatic: true,
-            input: 'text/plain',
-            cmd: 'copyq: popup("Clipboard", input())'
-            })
-    setCommands(cmds)
+       var cmds = commands()
+       cmds.unshift({
+               name: 'New Command',
+               automatic: true,
+               input: 'text/plain',
+               cmd: 'copyq: popup("Clipboard", input())'
+               })
+       setCommands(cmds)
 
-Command[] importCommands(String)
-''''''''''''''''''''''''''''''''
+.. js:function:: Command[] importCommands(String)
 
-Return list of commands from exported commands text.
+   Return list of commands from exported commands text.
 
-String exportCommands(Command[])
-''''''''''''''''''''''''''''''''
+.. js:function:: String exportCommands(Command[])
 
-Return exported command text.
+   Return exported command text.
 
-NetworkReply networkGet(url)
-''''''''''''''''''''''''''''
+.. js:function:: NetworkReply networkGet(url)
 
-Sends HTTP GET request.
+   Sends HTTP GET request.
 
-Returns reply.
+   Returns reply.
 
-NetworkReply networkPost(url, postData)
-'''''''''''''''''''''''''''''''''''''''
+.. js:function:: NetworkReply networkPost(url, postData)
 
-Sends HTTP POST request.
+   Sends HTTP POST request.
 
-Returns reply.
+   Returns reply.
 
-ByteArray env(name)
-'''''''''''''''''''
+.. js:function:: ByteArray env(name)
 
-Returns value of environment variable with given name.
+   Returns value of environment variable with given name.
 
-bool setEnv(name, value)
-''''''''''''''''''''''''
+.. js:function:: bool setEnv(name, value)
 
-Sets environment variable with given name to given value.
+   Sets environment variable with given name to given value.
 
-Returns true only if the variable was set.
+   Returns true only if the variable was set.
 
-sleep(time)
-'''''''''''
+.. js:function:: sleep(time)
 
-Wait for given time in milliseconds.
+   Wait for given time in milliseconds.
 
-ByteArray screenshot(format='png', [screenName])
-''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:function:: ByteArray screenshot(format='png', [screenName])
 
-Returns image data with screenshot.
+   Returns image data with screenshot.
 
-Example:
+   Example:
 
-.. code-block:: js
+   .. code-block:: js
 
-    copy('image/png', screenshot())
+       copy('image/png', screenshot())
 
-ByteArray screenshotSelect(format='png', [screenName])
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:function:: ByteArray screenshotSelect(format='png', [screenName])
 
-Same as ``screenshot()`` but allows to select an area on screen.
+   Same as ``screenshot()`` but allows to select an area on screen.
 
 Types
 -----
 
-ByteArray
-'''''''''
+.. js:class:: ByteArray
 
-Wrapper for QByteArray Qt class.
+   Wrapper for QByteArray Qt class.
 
-See `QByteArray <http://doc.qt.io/qt-5/qbytearray.html>`__.
+   See `QByteArray <http://doc.qt.io/qt-5/qbytearray.html>`__.
 
-``ByteArray`` is used to store all item data (image data, HTML and even
-plain text).
+   ``ByteArray`` is used to store all item data (image data, HTML and even
+   plain text).
 
-Use ``str()`` to convert it to string. Strings are usually more
-versatile. For example to concatenate two items, the data need to be
-converted to strings first.
+   Use ``str()`` to convert it to string. Strings are usually more
+   versatile. For example to concatenate two items, the data need to be
+   converted to strings first.
 
-.. code-block:: js
+   .. code-block:: js
 
-    var text = str(read(0)) + str(read(1))
+       var text = str(read(0)) + str(read(1))
 
-File
-''''
+.. js:class:: File
 
-Wrapper for QFile Qt class.
+   Wrapper for QFile Qt class.
 
-See `QFile <http://doc.qt.io/qt-5/qfile.html>`__.
+   See `QFile <http://doc.qt.io/qt-5/qfile.html>`__.
 
-Following code reads contents of "README.md" file from current
-directory.
+   Following code reads contents of "README.md" file from current
+   directory.
 
-.. code-block:: js
+   .. code-block:: js
 
-    var f = new File("README.md")
-    f.open()
-    var bytes = f.readAll()
+       var f = new File("README.md")
+       f.open()
+       var bytes = f.readAll()
 
-Dir
-'''
+.. js:class:: Dir
 
-Wrapper for QDir Qt class.
+   Wrapper for QDir Qt class.
 
-See `QDir <http://doc.qt.io/qt-5/qdir.html>`__.
+   See `QDir <http://doc.qt.io/qt-5/qdir.html>`__.
 
-TemporaryFile
-'''''''''''''
+.. js:class:: TemporaryFile
 
-Wrapper for QTemporaryFile Qt class.
+   Wrapper for QTemporaryFile Qt class.
 
-See `QTemporaryFile <https://doc.qt.io/qt-5/qtemporaryfile.html>`__.
+   See `QTemporaryFile <https://doc.qt.io/qt-5/qtemporaryfile.html>`__.
 
-.. code-block:: js
+   .. code-block:: js
 
-    var f = new TemporaryFile()
-    f.open()
-    f.setAutoRemove(false)
-    popup('New temporary file', f.fileName())
+       var f = new TemporaryFile()
+       f.open()
+       f.setAutoRemove(false)
+       popup('New temporary file', f.fileName())
+
+.. js:class:: Item (Object)
+
+   Type is ``Object`` and each property is MIME type with data.
+
+   Example:
+
+   .. code-block:: js
+
+       var item = {
+           mimeText: 'Hello, World!',
+           mimeHtml: '<p>Hello, World!</p>'
+       }
+       write(mimeItems, pack(item))'
+
+.. js:class:: FinishedCommand (Object)
+
+   Type is ``Object`` and properties are:
+
+   -  ``stdout`` - standard output
+   -  ``stderr`` - standard error output
+   -  ``exit_code`` - exit code
+
+.. js:class:: NetworkReply (Object)
+
+   Type is ``Object`` and properties are:
+
+   -  ``data`` - reply data
+   -  ``error`` - error string (set only if an error occurred)
+   -  ``redirect`` - URL for redirection (set only if redirection is
+      needed)
+   -  ``headers`` - reply headers (array of pairs with header name and
+      header content)
+
+.. js:class:: Command (Object)
+
+   Wrapper for a command (from Command dialog).
+
+   Properties are same as members of `Command
+   struct <https://github.com/hluk/CopyQ/blob/master/src/common/command.h>`__.
 
 Objects
 -------
 
-arguments (Array)
-'''''''''''''''''
+.. js:data:: arguments (Array)
 
-Array for accessing arguments passed to current function or the script
-(``arguments[0]`` is the script itself).
-
-Item (Object)
-'''''''''''''
-
-Type is ``Object`` and each property is MIME type with data.
-
-Example:
-
-.. code-block:: js
-
-    var item = {
-        mimeText: 'Hello, World!',
-        mimeHtml: '<p>Hello, World!</p>'
-    }
-    write(mimeItems, pack(item))'
-
-FinishedCommand (Object)
-''''''''''''''''''''''''
-
-Type is ``Object`` and properties are:
-
--  ``stdout`` - standard output
--  ``stderr`` - standard error output
--  ``exit_code`` - exit code
-
-NetworkReply (Object)
-'''''''''''''''''''''
-
-Type is ``Object`` and properties are:
-
--  ``data`` - reply data
--  ``error`` - error string (set only if an error occurred)
--  ``redirect`` - URL for redirection (set only if redirection is
-   needed)
--  ``headers`` - reply headers (array of pairs with header name and
-   header content)
-
-Command (Object)
-''''''''''''''''
-
-Wrapper for a command (from Command dialog).
-
-Properties are same as members of `Command
-struct <https://github.com/hluk/CopyQ/blob/master/src/common/command.h>`__.
+   Array for accessing arguments passed to current function or the script
+   (``arguments[0]`` is the script itself).
 
 MIME Types
 ----------
@@ -1042,147 +924,130 @@ These MIME types values are assigned to global variables prefixed with
 
    Content for following types is UTF-8 encoded.
 
-mimeText (text/plain)
-'''''''''''''''''''''
+.. js:data:: mimeText (text/plain)
 
-Data contains plain text content.
+   Data contains plain text content.
 
-mimeHtml (text/html)
-''''''''''''''''''''
+.. js:data:: mimeHtml (text/html)
 
-Data contains HTML content.
+   Data contains HTML content.
 
-mimeUriList (text/uri-list)
-'''''''''''''''''''''''''''
+.. js:data:: mimeUriList (text/uri-list)
 
-Data contains list of links to files, web pages etc.
+   Data contains list of links to files, web pages etc.
 
-mimeWindowTitle (application/x-copyq-owner-window-title)
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeWindowTitle (application/x-copyq-owner-window-title)
 
-Current window title for copied clipboard.
+   Current window title for copied clipboard.
 
-mimeItems (application/x-copyq-item)
-''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeItems (application/x-copyq-item)
 
-Serialized items.
+   Serialized items.
 
-mimeItemNotes (application/x-copyq-item-notes)
-''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeItemNotes (application/x-copyq-item-notes)
 
-Data contains notes for item.
+   Data contains notes for item.
 
-mimeOwner (application/x-copyq-owner)
-'''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeOwner (application/x-copyq-owner)
 
-If available, the clipboard was set from CopyQ (from script or copied
-items).
+   If available, the clipboard was set from CopyQ (from script or copied
+   items).
 
-Such clipboard is ignored in CopyQ, i.e. it won't be stored in clipboard
-tab and automatic commands won't be executed on it.
+   Such clipboard is ignored in CopyQ, i.e. it won't be stored in clipboard
+   tab and automatic commands won't be executed on it.
 
-mimeClipboardMode (application/x-copyq-clipboard-mode)
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeClipboardMode (application/x-copyq-clipboard-mode)
 
-Contains ``selection`` if data is from X11 mouse selection.
+   Contains ``selection`` if data is from X11 mouse selection.
 
-mimeCurrentTab (application/x-copyq-current-tab)
-''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeCurrentTab (application/x-copyq-current-tab)
 
-Current tab name when invoking command from main window.
+   Current tab name when invoking command from main window.
 
-Following command print the tab name when invoked from main window.
+   Following command print the tab name when invoked from main window.
 
-::
+   ::
 
-    copyq data application/x-copyq-current-tab
-    copyq selectedTab
+       copyq data application/x-copyq-current-tab
+       copyq selectedTab
 
-mimeSelectedItems (application/x-copyq-selected-items)
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeSelectedItems (application/x-copyq-selected-items)
 
-Selected items when invoking command from main window.
+   Selected items when invoking command from main window.
 
-mimeCurrentItem (application/x-copyq-current-item)
-''''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeCurrentItem (application/x-copyq-current-item)
 
-Current item when invoking command from main window.
+   Current item when invoking command from main window.
 
-mimeHidden (application/x-copyq-hidden)
-'''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeHidden (application/x-copyq-hidden)
 
-If set to ``1``, the clipboard or item content will be hidden in GUI.
+   If set to ``1``, the clipboard or item content will be hidden in GUI.
 
-This won't hide notes and tags.
+   This won't hide notes and tags.
 
-E.g. if you run following, window title and tool tip will be cleared.
+   E.g. if you run following, window title and tool tip will be cleared.
 
-::
+   ::
 
-    copyq copy application/x-copyq-hidden 1 plain/text "This is secret"
+       copyq copy application/x-copyq-hidden 1 plain/text "This is secret"
 
-mimeShortcut (application/x-copyq-shortcut)
-'''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeShortcut (application/x-copyq-shortcut)
 
-Application or global shortcut which activated the command.
+   Application or global shortcut which activated the command.
 
-::
+   ::
 
-    copyq:
-    var shortcut = data(mimeShortcut)
-    popup("Shortcut Pressed", shortcut)
+       copyq:
+       var shortcut = data(mimeShortcut)
+       popup("Shortcut Pressed", shortcut)
 
-mimeColor (application/x-copyq-color)
-'''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeColor (application/x-copyq-color)
 
-Item color (same as the one used by themes).
+   Item color (same as the one used by themes).
 
-Examples: #ffff00 rgba(255,255,0,0.5) bg - #000099
+   Examples: #ffff00 rgba(255,255,0,0.5) bg - #000099
 
-mimeOutputTab (application/x-copyq-output-tab)
-''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeOutputTab (application/x-copyq-output-tab)
 
-Name of the tab where to store new item.
+   Name of the tab where to store new item.
 
-The clipboard data will be stored in tab with this name after all
-automatic commands are run.
+   The clipboard data will be stored in tab with this name after all
+   automatic commands are run.
 
-Clear or remove the format to omit storing the data.
+   Clear or remove the format to omit storing the data.
 
-E.g. to omit storing the clipboard data use following in an automatic
-command.
+   E.g. to omit storing the clipboard data use following in an automatic
+   command.
 
-.. code-block:: js
+   .. code-block:: js
 
-    removeData(mimeOutputTab)
+       removeData(mimeOutputTab)
 
-Valid only in automatic commands.
+   Valid only in automatic commands.
 
-mimeSyncToClipboard (application/x-copyq-sync-to-selection)
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeSyncToClipboard (application/x-copyq-sync-to-selection)
 
-If exists the X11 selection data will be copied to clipboard.
+   If exists the X11 selection data will be copied to clipboard.
 
-The synchronization will happend after all automatic commands are run.
+   The synchronization will happend after all automatic commands are run.
 
-.. code-block:: js
+   .. code-block:: js
 
-    removeData(mimeSyncToClipboard)
+       removeData(mimeSyncToClipboard)
 
-Valid only in Linux/X11 in automatic commands.
+   Valid only in Linux/X11 in automatic commands.
 
-mimeSyncToSelection (application/x-copyq-sync-to-clipboard)
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+.. js:data:: mimeSyncToSelection (application/x-copyq-sync-to-clipboard)
 
-If exists the clipboard data will be copied to X11 selection.
+   If exists the clipboard data will be copied to X11 selection.
 
-The synchronization will happend after all automatic commands are run.
+   The synchronization will happend after all automatic commands are run.
 
-.. code-block:: js
+   .. code-block:: js
 
-    removeData(mimeSyncToSelection)
+       removeData(mimeSyncToSelection)
 
-Valid only in Linux/X11 in automatic commands.
+   Valid only in Linux/X11 in automatic commands.
 
 Selected Items
 --------------
