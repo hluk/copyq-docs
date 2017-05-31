@@ -1,3 +1,5 @@
+.. _scripting-api:
+
 Scripting API
 =============
 
@@ -5,8 +7,7 @@ CopyQ provides scripting capabilities to automatically handle clipboard
 changes, organize items, change settings and much more.
 
 In addition to features provided by Qt Script there are following
-`functions <#functions>`__, `types <#types>`__, `objects <#objects>`__
-and `useful MIME types <#mime-types>`__.
+`functions`_, `types`_, `objects`_ and `MIME types`_.
 
 Execute Script
 --------------
@@ -536,13 +537,13 @@ omitted.
 
    Returns tab that was selected when script was executed.
 
-   See `Selected Items <#selected-items>`__.
+   See `Selected Items`_.
 
 .. js:function:: [row, ...] selectedItems()
 
    Returns selected rows in current tab.
 
-   See `Selected Items <#selected-items>`__.
+   See `Selected Items`_.
 
 .. js:function:: Item selectedItemData(index)
 
@@ -551,7 +552,7 @@ omitted.
    The data can empty if the item was removed during execution of the
    script.
 
-   See `Selected Items <#selected-items>`__.
+   See `Selected Items`_.
 
 .. js:function:: bool setSelectedItemData(index, Item)
 
@@ -560,7 +561,7 @@ omitted.
    Returns false only if the data cannot be set, usually if item was
    removed.
 
-   See `Selected Items <#selected-items>`__.
+   See `Selected Items`_.
 
 .. js:function:: Item[] selectedItemsData()
 
@@ -569,7 +570,7 @@ omitted.
    Some data can empty if the item was removed during execution of the
    script.
 
-   See `Selected Items <#selected-items>`__.
+   See `Selected Items`_.
 
 .. js:function:: void setSelectedItemsData(Item[])
 
@@ -578,13 +579,13 @@ omitted.
    Some data may not be set if the item was removed during execution of the
    script.
 
-   See `Selected Items <#selected-items>`__.
+   See `Selected Items`_.
 
 .. js:function:: int currentItem(), int index()
 
    Returns current row in current tab.
 
-   See `Selected Items <#selected-items>`__.
+   See `Selected Items`_.
 
 .. js:function:: String escapeHtml(text)
 

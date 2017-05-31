@@ -66,8 +66,7 @@ Scripting language is `Qt
 Script <https://doc.qt.io/qt-5/qtscript-index.html>`__ (mostly same
 syntax and functions as JavaScript).
 
-API is described in
-`src/scriptable/README.md <https://github.com/hluk/CopyQ/blob/master/src/scriptable/README.md>`__.
+API is described in :ref:`scripting-api`.
 
 A script can be started by passing arguments to ``copyq``. This tells
 the server (main GUI application) to run the script.

@@ -8,8 +8,7 @@ shortcuts and automatically process new clipboard content in CopyQ.
 
 If you want to use any of the commands below, copy it to clipboard and
 paste it to the command list in Command dialog (opened with F6
-shortcut). For detailed info see `How to load shared commands and share
-them <https://github.com/hluk/CopyQ/wiki/FAQ#how-to-load-shared-commands-and-share-them>`__.
+shortcut). For detailed info see :ref:`faq-share-commands`.
 
 All these and more commands are available at
 `CopyQ command repository <https://github.com/hluk/copyq-commands>`__.

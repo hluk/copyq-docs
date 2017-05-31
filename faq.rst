@@ -121,6 +121,8 @@ Why are items and configuration not saved?
 
 Check access rights to configuration directory and files.
 
+.. _faq-share-commands:
+
 How to load shared commands and share them?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

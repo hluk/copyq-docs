@@ -86,13 +86,6 @@ generate the Makefiles differently
 - Qt 5.2.1 with MinGW 4.8: ``cmake -DWITH_QT5=TRUE -G "MinGW Makefiles" ..``
 - Qt 5.2.1 with VC2010: ``cmake -DWITH_QT5=TRUE -G "Visual Studio 10" ..``
 
-If you want to build with tests
-(https://github.com/hluk/CopyQ/wiki/Running-Tests) and debug use the
-additional ``cmake`` switches:
-``-DCMAKE_BUILD_TYPE=Debug -DWITH_TESTS=TRUE`` For example Qt 5.2.1 and
-MinGW 4.8:
-``cmake -DWITH_QT5=TRUE -DCMAKE_BUILD_TYPE=Debug -DWITH_TESTS=TRUE -G "MinGW Makefiles" ..``
-
 Build with MinGW
 ----------------
 

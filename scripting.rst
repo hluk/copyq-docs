@@ -65,22 +65,9 @@ As mentioned above, all command line options are also available for
 scripting e.g.: ``show()``, ``hide()``, ``toggle()``, ``copy()``,
 ``paste()``.
 
-Reference for available scripting functions can be found
-`here <https://github.com/hluk/CopyQ/blob/master/src/scriptable/README.md>`__.
+Reference for available scripting functions can be found at
+:ref:`scripting-api`.
 
 Other supported functions can be found at `ECMAScript
 Reference <http://doc.qt.io/qt-5/ecmascript.html>`__.
 
-Example Commands with Scripting
--------------------------------
-
--  | UPPERCASE/lowercase
-   | https://gist.github.com/m4r71n/6726a03d89fb23aee8c8
-   | https://gist.github.com/m4r71n/2ab66d6592e36d767236
-
--  | Date conversion
-   | https://gist.github.com/m4r71n/6fd7452cba0151436639
-   | https://gist.github.com/m4r71n/b988322cece3dfb483ee
-
--  | Strip whitespaces and linebreaks
-   | https://gist.github.com/m4r71n/d93fe7fdca3f72e64a52
