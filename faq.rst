@@ -2,7 +2,7 @@ FAQ - Frequently Asked Questions
 ================================
 
 How to preserve the order of copied items on copy or pasting multiple items?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------------
 
 a. Reverse order of selected items with ``Ctrl+Shift+R`` and copy them
    or
@@ -11,7 +11,7 @@ b. select items in reverse order and copy.
 See `#165 <https://github.com/hluk/CopyQ/issues/165#issuecomment-34745058>`__.
 
 How does pasting single/multiple items internally work?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------
 
 ``Return`` key copies the whole item (with all formats) to the clipboard
 and -- if the "Paste to current window" option is enabled -- it sends
@@ -25,13 +25,13 @@ in future, like join HTML, images or other formats.
 See `#165 <https://github.com/hluk/CopyQ/issues/165#issuecomment-34957089>`__.
 
 How to open the menu or context menu with only the keyboard?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------
 
 a. Use ``Alt+I`` to open the item menu or
 b. use the ``Menu`` key on your keyboard to open the context menu of an item.
 
 Is it possible to hide menu bar to have even cleaner main window?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------------
 
 Menu bar can be hidden by modifying style sheet of current theme.
 
@@ -49,12 +49,12 @@ Menu bar can be hidden by modifying style sheet of current theme.
         ;color: ${fg}"
 
 How to enable logging
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Set environment variable ``COPYQ_LOG_LEVEL`` to ``DEBUG`` and ``COPYQ_LOG_FILE`` to a file path for the log.
 
 How to back up commands?
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 There are two buttons under the ``Commands`` tab in the preferences ``Save Selected Commands...`` and ``Load Commands``.
 Additionally you can copy and paste commands from the ``Commands`` tab in the preferences.
@@ -65,14 +65,14 @@ and
 `#157 <https://github.com/hluk/CopyQ/issues/157#issuecomment-39028552>`__.
 
 Where are the notifications?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 The default values for ``Interval in seconds to display notifications``
 and ``Number of lines for clipboard notification`` are ``0``.
 After increasing these values the notifications will be shown.
 
 How to reuse file paths copied from a file manager?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------
 
 By default only the text is stored in item list when you copy of cut
 files from a file manager. Other data are usually needed to be able to
@@ -86,7 +86,7 @@ managers is ``text/uri-list``. Other special formats include
 to specify type of action (copy or cut).
 
 How to paste as plain text?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 -  In the ``Commands/Global Shortcuts dialog [F6]`` you can ``Add`` the
    command ``Paste clipboard as plain text`` and set the desired
@@ -101,13 +101,13 @@ How to paste as plain text?
    `#308 <https://github.com/hluk/CopyQ/issues/308#issuecomment-69925390>`__
 
 Where to find saved items and configuration?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------
 
 You can find configuration and saved items in:
 
 - Windows folder ``%APPDATA%\copyq`` for installed version of the app or ``config``
   folder in unzipped portable version,
-- Linux directory ``~/.config/copyq``.
+- Linux directory ``-/.config/copyq``.
 
 Run ``copyq info config`` to get absolute path to the configuration file
 (parent directory contains saved items).
@@ -117,14 +117,14 @@ Run ``copyq info config`` to get absolute path to the configuration file
    Main configuration for installed version of the app on Windows is stored in registry.
 
 Why are items and configuration not saved?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 Check access rights to configuration directory and files.
 
 .. _faq-share-commands:
 
 How to load shared commands and share them?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 You can stumble upon code that looks like this.
 
@@ -150,7 +150,7 @@ To share your commands, you can select the commands from command list in
 Command dialog and press "Copy Selected" button (or just hit Ctrl+C).
 
 How to open application window or tray menu using shortcut?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------
 
 Add new command to open window or menu with global shortcut:
 
@@ -165,7 +165,7 @@ Add new command to open window or menu with global shortcut:
 For more information about commands see :ref:`writing-commands`.
 
 How to omit storing text copied from specific windows like a password manager?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------------------------
 
 Add and modify automatic command to ignore text copied from the window:
 
@@ -185,7 +185,7 @@ Add and modify automatic command to ignore text copied from the window:
     don't want to process sensitive data in any way.
 
 How to paste double-clicked item from application window?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------------
 
 1. Open Preferences (Ctrl+P),
 2. go to History tab,
