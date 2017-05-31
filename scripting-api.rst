@@ -869,11 +869,10 @@ Types
 
    .. code-block:: js
 
-       var item = {
-           mimeText: 'Hello, World!',
-           mimeHtml: '<p>Hello, World!</p>'
-       }
-       write(mimeItems, pack(item))'
+       var item = {}
+       item[mimeText] = 'Hello, World!'
+       item[mimeHtml] = '<p>Hello, World!</p>'
+       write(mimeItems, pack(item))
 
 .. js:class:: FinishedCommand (Object)
 
