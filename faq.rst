@@ -1,11 +1,135 @@
 FAQ - Frequently Asked Questions
 ================================
 
+How to open application window or tray menu using shortcut?
+-----------------------------------------------------------
+
+Add new command to open window or menu with global shortcut:
+
+1. open "Command" dialog (``F6`` shortcut),
+2. click "Add" button in the dialog,
+3. select "Show/hide main window" or "Show the tray menu" from the list
+   and click "OK" button,
+4. click the button next to "Global Shortcut" label and set the
+   shortcut,
+5. click "OK" button to save the changes.
+
+For more information about commands see :ref:`writing-commands`.
+
+How to paste double-clicked item from application window?
+---------------------------------------------------------
+
+1. Open "Preferences" (``Ctrl+P`` shortcut),
+2. go to "History" tab,
+3. enable "Paste to current window" option.
+
+Next time you open main window and activate an item it should be pasted.
+
+How to paste as plain text?
+---------------------------
+
+To **paste clipboard as plain text**:
+
+1. open "Command" dialog (``F6`` shortcut),
+2. click "Add" button in the dialog,
+3. select "Paste clipboard as plain text" from the list and click "OK" button,
+4. click the button next to "Global Shortcut" label and set the shortcut,
+5. click "OK" button to save the changes.
+
+To **paste selected items as plain text** (from application window) follow the steps above
+but add "Paste as Plain Text" command instead and change "Shortcut".
+
+You can also disallow rich text storing: go to preferences,
+"Items" tab and uncheck "Web" checkbox under "Text" uncheck "HTML" checkbox.
+
+How to back up tabs, configuration and commands?
+------------------------------------------------
+
+From menu select "File - Export" and choose what tabs to export and whether to export
+configuration and commands.
+
+To restore the backup select menu item "File - Import", select the exported file and
+choose what to import back.
+
+.. note::
+
+   Importing tabs and commands won't override existing tabs but create new ones
+
+How to enable or disable displying notification when clipboard changes?
+-----------------------------------------------------------------------
+
+To enable displaying the notifications:
+
+1. open "Preferences" (``Ctrl+P`` shortcut),
+2. go to "Notifications" tab,
+3. set non-zero value for "Interval in seconds to display notifications",
+4. set non-zero value for "Number of lines for clipboard notification",
+5. click "OK" button.
+
+To enable displaying the notifications, set either of the options
+mentioned above to zero.
+
+.. _faq-share-commands:
+
+How to load shared commands and share them?
+-------------------------------------------
+
+You can stumble upon code that looks like this.
+
+.. code-block:: ini
+
+    [Command]
+    Name=Show/hide main window
+    Command=copyq: toggle()
+    Icon=\xf022
+    GlobalShortcut=ctrl+shift+1
+
+This code represents a command that can used in CopyQ (specifically it
+opens main window on Ctrl+Shift+1). To use the command in CopyQ:
+
+1. copy the code above,
+2. open "Command" dialog (``F6`` shortcut),
+3. click "Paste Commands" button at the bottom of the dialog,
+4. click OK button.
+
+(Now you should be able to open main window with Ctrl+Shift+1.)
+
+To share your commands, you can select the commands from command list in
+"Command" dialog and press "Copy Selected" button (or just hit Ctrl+C).
+
+How to omit storing text copied from specific windows like a password manager?
+------------------------------------------------------------------------------
+
+Add and modify automatic command to ignore text copied from the window:
+
+1. open "Command" dialog (``F6`` shortcut),
+2. click "Add" button in the dialog,
+3. select "Ignore *Password* window" from the list and click "OK"
+   button,
+4. select "Show Advanced"
+5. change "Window" text box to match the title (or part of it) of the
+   window to ignore (e.g. ``KeePass``),
+6. click "OK" button to save the changes.
+
+.. note::
+
+    This new command should be at top of the command list because
+    automatic commands are executed in order they appear in the list and we
+    don't want to process sensitive data in any way.
+
+How to enable logging
+---------------------
+
+Set environment variable ``COPYQ_LOG_LEVEL`` to ``DEBUG`` for verbose logging
+and set ``COPYQ_LOG_FILE`` to a file path for the log.
+
+You can copy current log file path to clipboard from Action dialog (F5 shortcut)
+by entering command ``copyq 'copy(info("log"))'``.
+
 How to preserve the order of copied items on copy or pasting multiple items?
 ----------------------------------------------------------------------------
 
-a. Reverse order of selected items with ``Ctrl+Shift+R`` and copy them
-   or
+a. Reverse order of selected items with ``Ctrl+Shift+R`` and copy them or
 b. select items in reverse order and copy.
 
 See `#165 <https://github.com/hluk/CopyQ/issues/165#issuecomment-34745058>`__.
@@ -27,16 +151,16 @@ See `#165 <https://github.com/hluk/CopyQ/issues/165#issuecomment-34957089>`__.
 How to open the menu or context menu with only the keyboard?
 ------------------------------------------------------------
 
-a. Use ``Alt+I`` to open the item menu or
-b. use the ``Menu`` key on your keyboard to open the context menu of an item.
+Use ``Alt+I`` to open the item menu or use the ``Menu`` key on your keyboard
+to open the context menu for selected items.
 
 Is it possible to hide menu bar to have even cleaner main window?
 -----------------------------------------------------------------
 
 Menu bar can be hidden by modifying style sheet of current theme.
 
-1. Open Preferences dialog (Ctrl+P),
-2. go to Appearance,
+1. Open "Preferences" (``Ctrl+P`` shortcut),
+2. go to "Appearance" tab,
 3. enable checkbox "Set colors for tabs, tool bar and menus",
 4. click "Edit Theme" button,
 5. find ``menu_bar_css`` option and add ``height: 0``:
@@ -47,29 +171,6 @@ Menu bar can be hidden by modifying style sheet of current theme.
         ;height: 0
         ;background: ${bg}
         ;color: ${fg}"
-
-How to enable logging
----------------------
-
-Set environment variable ``COPYQ_LOG_LEVEL`` to ``DEBUG`` and ``COPYQ_LOG_FILE`` to a file path for the log.
-
-How to back up commands?
-------------------------
-
-There are two buttons under the ``Commands`` tab in the preferences ``Save Selected Commands...`` and ``Load Commands``.
-Additionally you can copy and paste commands from the ``Commands`` tab in the preferences.
-
-See
-`#125 <https://github.com/hluk/CopyQ/issues/125#issuecomment-33514437>`__
-and
-`#157 <https://github.com/hluk/CopyQ/issues/157#issuecomment-39028552>`__.
-
-Where are the notifications?
-----------------------------
-
-The default values for ``Interval in seconds to display notifications``
-and ``Number of lines for clipboard notification`` are ``0``.
-After increasing these values the notifications will be shown.
 
 How to reuse file paths copied from a file manager?
 ---------------------------------------------------
@@ -84,21 +185,6 @@ managers is ``text/uri-list``. Other special formats include
 ``x-special/gnome-copied-files`` for Nautilus,
 ``application/x-kde-cutselection`` for Dolphin. These formats are used
 to specify type of action (copy or cut).
-
-How to paste as plain text?
----------------------------
-
--  In the ``Commands/Global Shortcuts dialog [F6]`` you can ``Add`` the
-   command ``Paste clipboard as plain text`` and set the desired
-   ``Global Shortcut``.
--  In the ``Commands/Global Shortcuts dialog [F6]`` you can ``Add`` the
-   command ``Paste as Plain Text``. You can now to paste an item as
-   plain text from the item list with ``Shift+Return`` or with the help
-   of the context menu.
--  You can also disallow rich text storing (so Shift+Enter pastes plain
-   text out-of-the-box) -- go to preferences, "Items" tab and uncheck
-   "Web" checkbox under "Text" uncheck "HTML" checkbox. See
-   `#308 <https://github.com/hluk/CopyQ/issues/308#issuecomment-69925390>`__
 
 Where to find saved items and configuration?
 --------------------------------------------
@@ -120,75 +206,3 @@ Why are items and configuration not saved?
 ------------------------------------------
 
 Check access rights to configuration directory and files.
-
-.. _faq-share-commands:
-
-How to load shared commands and share them?
--------------------------------------------
-
-You can stumble upon code that looks like this.
-
-.. code-block:: ini
-
-    [Command]
-    Name=Show/hide main window
-    Command=copyq: toggle()
-    Icon=\xf022
-    GlobalShortcut=ctrl+shift+1
-
-This code represents a command that can used in CopyQ (specifically it
-opens main window on Ctrl+Shift+1). To use the command in CopyQ:
-
-1. copy the code above,
-2. open Command dialog F6 in CopyQ,
-3. click "Paste Commands" button at the bottom of the dialog,
-4. click OK button.
-
-(Now you should be able to open main window with Ctrl+Shift+1.)
-
-To share your commands, you can select the commands from command list in
-Command dialog and press "Copy Selected" button (or just hit Ctrl+C).
-
-How to open application window or tray menu using shortcut?
------------------------------------------------------------
-
-Add new command to open window or menu with global shortcut:
-
-1. open Command dialog F6 in CopyQ,
-2. click "Add" button in the dialog,
-3. select "Show/hide main window" or "Show the tray menu" from the list
-   and click "OK" button,
-4. click the button next to "Global Shortcut" label and set the
-   shortcut,
-5. click "OK" button to save the changes.
-
-For more information about commands see :ref:`writing-commands`.
-
-How to omit storing text copied from specific windows like a password manager?
-------------------------------------------------------------------------------
-
-Add and modify automatic command to ignore text copied from the window:
-
-1. open Command dialog F6 in CopyQ,
-2. click "Add" button in the dialog,
-3. select "Ignore *Password* window" from the list and click "OK"
-   button,
-4. select "Show Advanced"
-5. change Window text box to match the title (or part of it) of the
-   window to ignore (e.g. ``KeePass``),
-6. click "OK" button to save the changes.
-
-.. note::
-
-    This new command should be at top of the command list because
-    automatic commands are executed in order they appear in the list and we
-    don't want to process sensitive data in any way.
-
-How to paste double-clicked item from application window?
----------------------------------------------------------
-
-1. Open Preferences (Ctrl+P),
-2. go to History tab,
-3. enable "Paste to current window" option.
-
-Next time you open main window and activate an item it should be pasted.
