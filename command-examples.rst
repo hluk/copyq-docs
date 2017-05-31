@@ -11,6 +11,9 @@ paste it to the command list in Command dialog (opened with F6
 shortcut). For detailed info see `How to load shared commands and share
 them <https://github.com/hluk/CopyQ/wiki/FAQ#how-to-load-shared-commands-and-share-them>`__.
 
+All these and more commands are available at
+`CopyQ command repository <https://github.com/hluk/copyq-commands>`__.
+
 Join Selected Items
 ~~~~~~~~~~~~~~~~~~~
 
@@ -582,24 +585,3 @@ Change Upper/Lower Case of Selected Text
     Icon=\xf034
     Name=Toggle Upper/Lower Case
 
-Other Commands
---------------
-
--  `Save Item/Clipboard To a
-   File <https://gist.github.com/hluk/64dae8b25cd21e6141dd>`__
--  `Store Copy
-   Time <https://gist.github.com/hluk/4a7be6db8fe1c072469e>`__
--  `Save Texts on
-   Disk <https://gist.github.com/hluk/be4481e6c72ab607c074>`__
--  `Undoable Move to
-   Trash <https://gist.github.com/hluk/c64f91454c6983fb5433>`__
--  `Tab for Frequently Copied
-   Items <https://gist.github.com/hluk/de52be0fb01024dd8f7b>`__
--  `Tab for URLs with Title and
-   Icon <https://gist.github.com/hluk/b598ab08e00ce9618b33>`__
--  `Dialog for Pasting Snippets from
-   Tab <https://gist.github.com/hluk/af37cd2ca650c92ed0fa>`__
--  `Search All
-   Tabs <https://gist.github.com/hluk/95889230aeea2388dea5>`__
--  `Synchronize Clipboard with Other
-   Sessions <https://gist.github.com/hluk/b1f69df944335f41242b>`__
