@@ -192,7 +192,7 @@ Example (call CopyQ from Python):
 
 Example (call CopyQ from PowerShell on Windows):
 
-.. code-block:: powershell
+::
 
     powershell:
     $Item1 = (& "$env:COPYQ" read 0 | Out-String)
