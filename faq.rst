@@ -1,6 +1,8 @@
 FAQ - Frequently Asked Questions
 ================================
 
+.. _faq-show-app:
+
 How to open application window or tray menu using shortcut?
 -----------------------------------------------------------
 
@@ -15,6 +17,8 @@ Add new command to open window or menu with global shortcut:
 5. click "OK" button to save the changes.
 
 For more information about commands see :ref:`writing-commands`.
+
+.. _faq-paste-from-window:
 
 How to paste double-clicked item from application window?
 ---------------------------------------------------------
@@ -41,6 +45,21 @@ but add "Paste as Plain Text" command instead and change "Shortcut".
 
 You can also disallow rich text storing: go to preferences,
 "Items" tab and uncheck "Web" checkbox under "Text" uncheck "HTML" checkbox.
+
+.. _faq-disable-clipboard-storing:
+
+How to disable storing clipboard?
+---------------------------------
+
+To temporarily disable storing clipboard in item list,
+select menu item "File - Disable Clipboard Storing" (``Ctrl+Shift+X`` shortcut).
+To re-enable the functionality select "File - Enable Clipboard Storing" (same shortcut).
+
+To permanently disable storing clipboard:
+
+1. Open "Preferences" (``Ctrl+P`` shortcut),
+2. go to "History" tab,
+3. clear "Tab for storing clipboard" field.
 
 How to back up tabs, configuration and commands?
 ------------------------------------------------
