@@ -18,6 +18,25 @@ or download the latest source code archive from:
 - `master branch in zip <https://github.com/hluk/CopyQ/archive/master.zip>`__
 - `master branch in tar.gz <https://github.com/hluk/CopyQ/archive/master.tar.gz>`__
 
+Install Dependencies
+--------------------
+
+The build requires:
+
+- `CMake <https://cmake.org/download/>`__
+- `Qt <https://download.qt.io/archive/qt/>`__
+
+On **Ubuntu** you can install all build dependencies with:
+
+::
+
+    sudo apt install cmake qtbase5-private-dev qtscript5-dev qttools5-dev qttools5-dev-tools libqt5svg5-dev
+
+Following is optional but recommended:
+
+::
+
+    sudo apt install libxfixes-dev libxtst-dev
 
 Build and Install
 -----------------
