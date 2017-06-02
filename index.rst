@@ -12,6 +12,7 @@ CopyQ is advanced clipboard manager with editing and scripting features.
     :caption: The Basics
     :maxdepth: 2
 
+    installation
     basic-usage
     tabs-and-items
     keyboard
