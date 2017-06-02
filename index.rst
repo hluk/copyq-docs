@@ -6,7 +6,12 @@
 Welcome to CopyQ's documentation!
 =================================
 
-CopyQ is advanced clipboard manager with editing and scripting features.
+CopyQ is clipboard manager -- a desktop application which stores content of the
+system clipboard whenever it changes and allows to search the history and copy
+it back to the system clipboard or paste it directly to other applications.
+
+This documentation describes some basic concepts and workflows as well as more
+advanced topics like scripting and application development process.
 
 .. toctree::
     :caption: The Basics
