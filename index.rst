@@ -43,6 +43,5 @@ advanced topics like scripting and application development process.
     source-code-overview
     translations
     text-encoding
-    how-to-build-copyq-on-windows
     customize-and-build-the-windows-installer
 
