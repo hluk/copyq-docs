@@ -16,6 +16,7 @@ On **Ubuntu** set up the official repository and install the app from terminal.
 
 .. code-block:: bash
 
+    sudo apt install software-properties-common python-software-properties
     sudo add-apt-repository ppa:hluk/copyq
     sudo apt update
     sudo apt install copyq
