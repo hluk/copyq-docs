@@ -85,7 +85,7 @@ To enable displaying the notifications:
 4. set non-zero value for "Number of lines for clipboard notification",
 5. click "OK" button.
 
-To enable displaying the notifications, set either of the options
+To disable displaying the notifications, set either of the options
 mentioned above to zero.
 
 .. _faq-share-commands:
